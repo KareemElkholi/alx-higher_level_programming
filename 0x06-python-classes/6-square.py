@@ -6,7 +6,7 @@ class Square:
     """define Square"""
     def __init__(self, size=0, position=(0, 0)):
         self.__size = size
-        self.__position = position
+        self.position = position
 
     @property
     def size(self):
@@ -40,8 +40,8 @@ class Square:
         if self.__size == 0:
             print("")
         else:
-            [print("") for i in range(0, self.__position[1])]
-        for i in range(0, self.__size):
-            [print(" ", end="") for j in range(0, self.__position[0])]
-            [print("#", end="") for k in range(0, self.__size)]
+            [print("") for i in range(self.__position[1])]
+        for i in range(self.__size):
+            [print(" ", end="") for i in range(self.__position[0])]
+            [print("#", end="") for i in range(self.__size)]
             print("")
