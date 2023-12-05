@@ -22,7 +22,12 @@ Print unsorted list:
         >>> print(l)
 	[3, 9, 8, 4]
 
-print_sorted called with 2 args:
+print_sorted called with 2 arg:
+        >>> l.print_sorted(0)
+        Traceback (most recent call last):
+        TypeError: print_sorted() takes 1 positional argument but 2 were given
+
+print_sorted called with 3 args:
 	>>> l.print_sorted(0, 1)
 	Traceback (most recent call last):
 	TypeError: print_sorted() takes 1 positional argument but 3 were given
