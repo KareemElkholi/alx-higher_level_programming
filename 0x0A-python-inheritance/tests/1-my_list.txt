@@ -67,6 +67,11 @@ Slice list:
 	>>> print(l)
 	[-3, -8]
 
+Reverse list:
+	>>> l.reverse()
+	>>> print(l)
+	[-8, -3]
+
 Clear list:
         >>> l.clear()
         >>> print(l)
