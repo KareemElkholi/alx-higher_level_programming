@@ -1,12 +1,20 @@
 Import:
 	>>> MyList = __import__("1-my_list").MyList
 
-Print Empty list:
+Check instance:
 	>>> l = MyList()
+        >>> isinstance(l, list)
+        True
+
+Check type:
+        >>> type(l) == MyList
+        True
+
+Print Empty list:
 	>>> print(l)
 	[]
 
-Print unsorted:
+Print unsorted list:
 	>>> l.append(3)
         >>> l.append(9)
         >>> l.append(8)
@@ -14,7 +22,7 @@ Print unsorted:
         >>> print(l)
 	[3, 9, 8, 4]
 
-Print sorted:
+Print sorted list:
 	>>> l.print_sorted()
 	[3, 4, 8, 9]
 
@@ -23,3 +31,24 @@ Delete items from list:
 	>>> del l[1]
 	>>> print (l)
 	[9, 4]
+
+Append negative numbers:
+	>>> l.append(-3)
+	>>> l.append(-8)
+	>>> l.append(-5)
+	>>> print(l)
+	[9, 4, -3, -8, -5]
+
+Print sorted list with negative numbers:
+	>>> l.print_sorted()
+	[-8, -5, -3, 4, 9]
+
+Slice list:
+	>>> l = l[2:4]
+	>>> print(l)
+	[-3, -8]
+
+Clear list:
+        >>> l.clear()
+        >>> print(l)
+        []
