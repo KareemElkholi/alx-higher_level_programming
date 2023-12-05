@@ -1,0 +1,25 @@
+Import:
+	>>> MyList = __import__("1-my_list").MyList
+
+Print Empty list:
+	>>> l = MyList()
+	>>> print(l)
+	[]
+
+Print unsorted:
+	>>> l.append(3)
+        >>> l.append(9)
+        >>> l.append(8)
+        >>> l.append(4)
+        >>> print(l)
+	[3, 9, 8, 4]
+
+Print sorted:
+	>>> l.print_sorted()
+	[3, 4, 8, 9]
+
+Delete items from list:
+	>>> del l[0]
+	>>> del l[1]
+	>>> print (l)
+	[9, 4]
