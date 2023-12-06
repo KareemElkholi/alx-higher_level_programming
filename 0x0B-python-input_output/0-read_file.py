@@ -5,4 +5,4 @@
 def read_file(filename=""):
     """print"""
     with open(filename) as file:
-        print(file.read().strip())
+        print(file.read(), end="")
