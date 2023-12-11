@@ -12,3 +12,13 @@ class Square(Rectangle):
     def __str__(self):
         """overriding __str__"""
         return f"[Square] ({self.id}) {self.x}/{self.y} - {self.width}"
+
+    @property
+    def size(self):
+        """size"""
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        self.validator("width", value)
+        self.width = self.height = value
