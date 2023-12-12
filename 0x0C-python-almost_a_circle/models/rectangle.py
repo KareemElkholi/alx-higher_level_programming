@@ -86,3 +86,8 @@ class Rectangle(Base):
             setattr(self, names[i], args[i])
         for k, v in kwargs.items():
             setattr(self, k, v)
+
+    def to_dictionary(self):
+        """return dictionary representation"""
+        return {'x': self.x, 'y': self.y, 'id': self.id,
+                'height': self.height, 'width': self.width}
