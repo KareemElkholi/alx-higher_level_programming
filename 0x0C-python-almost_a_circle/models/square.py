@@ -22,3 +22,11 @@ class Square(Rectangle):
     def size(self, value):
         self.validator("width", value)
         self.width = self.height = value
+
+    def update(self, *args, **kwargs):
+        """update values"""
+        names = ["id", "size", "x", "y"]
+        for i in range(len(args)):
+            setattr(self, names[i], args[i])
+        for k, v in kwargs.items():
+            setattr(self, k, v)
