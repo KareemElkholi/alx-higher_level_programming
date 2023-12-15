@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Base class module"""
 import json
+import csv
 
 
 class Base:
@@ -55,6 +56,24 @@ class Base:
         """return list of instances"""
         try:
             with open(f"{cls.__name__}.json", "r") as file:
+                return [cls.create(**dictionary)
+                        for dictionary in cls.from_json_string(file.read())]
+        except IOError:
+            return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """save to csv"""
+        if list_objs:
+            list_objs = [obj.to_dictionary() for obj in list_objs]
+        with open(f"{cls.__name__}.csv", "w") as file:
+            file.write(Base.to_json_string(list_objs))
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """load from csv"""
+        try:
+            with open(f"{cls.__name__}.csv", "r") as file:
                 return [cls.create(**dictionary)
                         for dictionary in cls.from_json_string(file.read())]
         except IOError:
