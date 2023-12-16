@@ -2,6 +2,7 @@
 """Base class module"""
 import json
 import csv
+import turtle
 
 
 class Base:
@@ -78,3 +79,16 @@ class Base:
                         for dictionary in cls.from_json_string(file.read())]
         except IOError:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        for i in list_rectangles + list_squares:
+            t = turtle.Turtle()
+            t.forward(i.width)
+            t.left(90)
+            t.forward(i.height)
+            t.left(90)
+            t.forward(i.width)
+            t.left(90)
+            t.forward(i.height)
+            t.left(90)
